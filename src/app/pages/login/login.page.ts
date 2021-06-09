@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseauthService } from '../../services/firebaseauth.service';
 import { Router } from "@angular/router";
 import { ToastController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ export class LoginPage implements OnInit {
   showPassword = false;
   passwordToggleIcon = 'eye';
 
-  constructor(private authService: FirebaseauthService, public router: Router, public toastController: ToastController) { }
+  constructor(private authService: FirebaseauthService, public router: Router, public toastController: ToastController,
+              public menuCtrl: MenuController) {
+                this.menuCtrl.enable(false, "custom");
+               }
 
   ngOnInit() {
   }

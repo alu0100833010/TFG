@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 import { FirebaseauthService } from './services/firebaseauth.service';
 
 @Component({
@@ -8,9 +8,10 @@ import { FirebaseauthService } from './services/firebaseauth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private firebaseauthService: FirebaseauthService, public alertController: AlertController) {}
+  constructor(private firebaseauthService: FirebaseauthService, public alertController: AlertController, public menu: MenuController) {}
 
   logout() {
+    this.menu.enable(false);
     this.firebaseauthService.logout();
   }
 

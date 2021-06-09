@@ -86,6 +86,7 @@ export class HomePage implements OnInit {
   }
 
   logout() {
+    this.menu.enable(false);
     this.authService.logout();
   }
 

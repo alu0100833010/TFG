@@ -4,7 +4,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 import { User } from '../../models/user';
 import { Level } from '../../models/level';
 import { Logro } from '../../models/logro';
-import { AlertController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -48,7 +48,7 @@ export class ProfilePage implements OnInit {
   userInsignLevel = '';
 
   constructor(public firebaseauthService: FirebaseauthService, public firestoreService: FirestoreService, 
-    public alertController: AlertController) {
+    public alertController: AlertController, public menu: MenuController) {
     this.firebaseauthService.stateAuth().subscribe(res => {
       if (res != null) {
         this.uid = res.uid;
@@ -149,6 +149,7 @@ export class ProfilePage implements OnInit {
   }
 
   logout() {
+    this.menu.enable(false);
     this.firebaseauthService.logout();
   }
 
