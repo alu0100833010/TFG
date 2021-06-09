@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-menu-button color="dark"></ion-menu-button> <!-- Función de ionic para que aparezca un botón para abrir y cerrar el menú -->
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="logout"> Cerrar sesión
+      <ion-button (click)="presentAlertConfirm()">
+        <ion-icon  color="dark" name="log-out-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <!--<ion-buttons slot="end">
+      <ion-button routerLink="/profile">
+        <ion-icon name="person" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="home"> 
+          <h1>¡Hola, <br> {{user.userName}}!</h1>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="level ion-text-right">
+          <h5>Nivel: <ion-chip>
+            <ion-label>{{user.userLevel}}</ion-label>
+            </ion-chip></h5>
+          <div class="stars-outer">
+            <div class="stars-inner"></div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="title">
+    <h2>Juegos</h2>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let game of games; index as i">
+        <ion-card [ngClass]="bgColor[i]">
+          <ion-card-content class="namegame">
+            <div class="namegame"></div>
+            {{game.gameTitle}}
+          </ion-card-content>
+          <ion-row class="cardbutt">
+            <ion-button [routerLink]="['/game/' + game.gameName]">
+              Jugar
+            </ion-button>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--Problema de cambiar rutas para cada juego-->
+  <!--<ion-button *ngFor="let game of games" routerLink="/game" expand="block">{{game.gameName}}</ion-button>-->
+  <!-- Intentar añadir en la base de datos la ruta (SOLUCIONADO)-->
+
+  <div class="title">
+    <h2>Desafíos</h2>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let desafio of desafios; index as i">
+        <ion-card [ngClass]="bgColor[i]">
+          <ion-card-content class="namegame">
+            <div class="namegame"></div>
+            {{desafio.desafioTitle}}
+          </ion-card-content>
+          <ion-row class="cardbutt">
+            <ion-button [routerLink]="['/desafio/' + desafio.desafioName]">
+              Jugar
+            </ion-button>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="title">
+    <h2>Consejos</h2>
+  </div>
+  <div class="info"> ¿Qué puedo hacer para mantenerme activo?</div>
+  <div class="button-container">
+    <ion-button expand="block" class="main-button" routerLink="/consejos">Ver consejos</ion-button>
+  </div>
+</ion-content>

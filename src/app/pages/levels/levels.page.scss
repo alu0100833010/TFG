@@ -1,0 +1,52 @@
+// This will remove iOS Header Line
+ion-toolbar {
+    --border-width: 0 !important;
+}
+
+// Removing Android Header Line
+.header-md::after {
+    background: none !important;
+}
+
+.header {
+    text-align: center;
+    font-size: 40px !important;
+}
+
+.currentUser {
+    color: rgba(100, 182, 255, 1);
+    background-color: #e9e9e9;
+    font-weight: bold;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+.table th {
+    padding: auto;
+    text-align: center;
+}
+.table td {
+    padding: 15px;
+}
+
+.table tr {
+    border-bottom: 2px solid #dddddd;
+}
+
+.table thead {
+    font-size: 20px;
+    border-top: none;
+    color: #FC7174;
+}
+
+ion-img {
+    display: flex;
+    margin:auto;
+    width: 70px;
+    height: 70px;
+}

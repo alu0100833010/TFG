@@ -1,0 +1,144 @@
+// This will remove iOS Header Line
+ion-toolbar {
+    --border-width: 0 !important;
+    --background: transparent;
+}
+
+// Removing Android Header Line
+.header-md::after {
+    background: none !important;
+}
+
+.header {
+    background: linear-gradient(#FC7174, #FDBB63);
+    height: 320px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 0 auto;
+
+    img {
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        border: 2px solid #ffffff;
+        background-color: #fff;
+    }
+}
+
+.playername {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.playeremail {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+.playerlvl {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 auto;
+    font-weight: bold;
+
+    ion-chip {
+        --background: #FACD68;
+        color:#ffffff;
+        font-size: large;
+    }
+}
+
+.img-insig {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+ion-card-title {
+    font-size: 20px;
+    color: #FC7174;
+}
+
+ion-chip {
+    --background: #fff;
+    color: rgba(100, 182, 255, 1);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logout {
+    color: #fff;
+    font-weight: bold;
+}
+/*ion-content {
+    --background: linear-gradient(#FC7174, #FDBB63);
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+
+.card {
+    margin: 0 auto;
+    border-radius: 15px;
+    
+    .header {
+        height: 200px;
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px));
+                border: 2px solid #EB6859;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.card-body {
+    background-color: #ffffff;
+    padding: 30px;
+    height: calc(100vh – (200px + 56px));
+    overflow: hidden;
+    border-radius: 15px;
+
+    .user-meta {
+        padding-top: 40px;
+
+        .playername {
+            font-size: 30px;
+            font-weight: 600;
+            color: #EB6859;
+        }
+
+        .country {
+            font-size: 20px;
+            color: #949ea6;
+            margin: 0 auto;
+        }
+    }
+}
+
+.img-insig {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+ion-chip {
+    --background: #FACD68;
+}*/

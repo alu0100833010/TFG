@@ -1,0 +1,148 @@
+// This will remove iOS Header Line
+ion-toolbar {
+    --border-width: 0 !important;
+}
+
+// Removing Android Header Line
+.header-md::after {
+    background: none !important;
+}
+
+.home {
+    font-size: 26px;
+    //color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.level {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  margin: 0 auto;
+
+  ion-chip {
+      --background: #FACD68;
+      color:#ffffff;
+      font-weight: bold;
+  }
+}
+
+.sub {
+  padding-left: 20px;
+  padding-right: 20px;
+  p {
+    font-size: 18px;
+    color: #FC7174;
+  }
+}
+
+.button-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.info {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    //color: black;
+    padding-bottom: 10px;
+  }
+}
+
+ion-card {
+    height: 180px;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 0px;
+
+    .namegame {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    ion-button {
+      color:white;
+      font-weight: bold;
+      --border-color: white;
+    }
+}
+
+.color1 {
+  --background: #FC7174;
+  //--background: #F45D5C;
+}
+
+.color2 {
+  --background: #FDBB63;
+  //--background: #3CB882;
+  //--background: #FC7174;
+}
+
+.color3 {
+  --background: #FC8862;
+  //--background: #B479F1;
+}
+
+.color4 {
+  --background: #fdb284;
+  //--background: #FEBD6B;
+}
+
+.stars-outer{
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+  color: #FACD68;
+}
+
+.stars-inner {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #FACD68;
+}
+
+.cardbutt {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  ion-button {
+    --background: linear-gradient(90deg, rgba(102,126, 234, 1) 0%, rgba(100, 182, 255, 1) 100%);
+  }
+}
+
+.logout {
+  color: #FC7174;
+  font-weight: bold;
+}

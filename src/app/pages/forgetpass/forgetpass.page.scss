@@ -1,0 +1,44 @@
+// This will remove iOS Header Line
+ion-toolbar {
+    --border-width: 0 !important;
+}
+
+// Removing Android Header Line
+.header-md::after {
+    background: none !important;
+}
+
+.container h1 {
+    margin-top: 0;
+}
+
+.form-container {
+    margin-top: 48px;
+}
+
+.form-container ion-item {
+    --padding-start: 0;
+    --border-color: #DADADA;
+}
+
+.form-container ion-item ion-label {
+    color: #A6A6A6;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+.form-container ion-item ion-icon {
+    margin-top: auto;
+    color: #c6cbd4;
+}
+
+.form-container ion-button {
+    margin-top: 48px;
+}
+
+.info {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

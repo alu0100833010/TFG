@@ -1,0 +1,31 @@
+// This will remove iOS Header Line
+ion-toolbar {
+    --border-width: 0 !important;
+}
+
+// Removing Android Header Line
+.header-md::after {
+    background: none !important;
+}
+
+.h5pCont {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.results {
+    margin-top: 30px;
+    text-align: center;
+    font-size: large;
+
+    .points {
+        font-weight: bold;
+
+        ion-chip {
+            --background: rgba(100, 182, 255, 1);;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }    
+}

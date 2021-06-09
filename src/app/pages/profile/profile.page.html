@@ -1,0 +1,94 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <ion-icon  color="light" name="chevron-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <ion-icon  color="light" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>-->
+<ion-content fullscreen="true" slot="fixed">
+  <div class="header ion-text-center">
+    <ion-toolbar>
+      <ion-buttons slot="start"> 
+        <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+          <ion-icon  color="light" name="chevron-back-outline"></ion-icon> 
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end" class="logout"> Cerrar sesión
+        <ion-button (click)="presentAlertConfirm()">
+          <ion-icon  color="light" name="log-out-outline"></ion-icon> 
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <div class="avatar">
+      <img [src]="user.userIns" alt="">
+    </div>
+    <div class="playername">{{user.userName}}</div>
+    <div class="playeremail">{{user.userEmail}}</div>
+    <div class="playerlvl">Nivel: <ion-chip>
+      <ion-label>{{user.userLevel}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+  <ion-card class="ion-padding ion-text-center">
+    <ion-card-header>
+      <ion-card-title>Puntos</ion-card-title>
+    </ion-card-header>
+    <ion-chip>
+      <ion-label>{{user.userTotalPoints}}</ion-label>
+    </ion-chip>
+    <ion-card-header>
+      <ion-card-title>Victorias</ion-card-title>
+    </ion-card-header>
+    <ion-chip>
+      <ion-label>{{user.userWins}}</ion-label>
+    </ion-chip> 
+  </ion-card>
+  <ion-card class="ion-padding ion-text-center">
+    <ion-card-header>
+      <ion-card-title>Logros obtenidos</ion-card-title>
+    </ion-card-header>
+    <ion-img class="img-insig" *ngFor="let img of user.userLogros" [src]="img"></ion-img>   
+    <ion-button expand="block" class="main-button" routerLink="/logros">Ver todos los logros</ion-button>
+  </ion-card>
+  <!--<div class="ion-padding">
+    <div class="card">
+      <div class="header">
+        <div class="avatar">
+          <img src="/assets/images/iceberg.png" alt="">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="user-meta ion-text-center">
+          <h3 class="playername">{{user.userName}}</h3>
+          <h5 class="country">{{user.userEmail}}</h5>
+          <h6 class="ranking">Puntos totales: <ion-chip>
+            <ion-label>{{user.userTotalPoints}}</ion-label>
+            </ion-chip>
+          </h6>
+          <h6 class="ranking">Nivel: <ion-chip>
+            <ion-label>{{user.userLevel}}</ion-label>
+            </ion-chip>
+          </h6>
+          <h6 class="ranking">Número de victorias: <ion-chip>
+            <ion-label>{{user.userWins}}</ion-label>
+            </ion-chip>
+          </h6>
+          <h6 class="ranking">Logros obtenidos:
+          </h6>
+          <ion-img class="img-insig" *ngFor="let img of user.userLogros" [src]="img"></ion-img>
+        </div>
+      </div>
+    </div>
+  </div>-->
+ 
+</ion-content>
+
+

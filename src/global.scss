@@ -24,3 +24,38 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;600&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.main-button {
+    --background: linear-gradient(90deg, rgba(102,126, 234, 1) 0%, rgba(100, 182, 255, 1) 100%);
+    --box-shadow: none;
+    position: relative;
+    height: 50px;
+    margin-bottom: 15px;
+    -webkit-appearance: none;
+}
+
+.main-button::after {
+    content: " ";
+    position: absolute;
+    width: 80%;
+    right: 10%;
+    bottom: 0;
+    top: 10px;
+    height: 40px;
+    z-index: -1;
+    box-shadow: 0px 20px 20px -17px rgba(0, 111, 255, 1);
+    -webkit-appearance: none;
+}
+
+.toast-style {
+    --box-shadow: 0px 20px 20px -17px rgba(0, 111, 255, 1);
+    font-size: medium;
+}

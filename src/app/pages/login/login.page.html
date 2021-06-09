@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Inicia sesión</h1>
+
+    <div class="form-container">
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="password"></ion-input>
+        <ion-icon [name]="passwordToggleIcon" (click)="togglePassword()" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-button expand="block" class="main-button" (click)="onSubmitLogin()">Iniciar sesión</ion-button>
+
+      <div class="forget">
+        ¿Olvidaste la contraseña? <ion-button color="dark" fill="clear" routerLink="/forgetpass" routerDirection="forward">Restablecer</ion-button>
+      </div>
+
+      <div class="socialnetwork">
+        o inicia sesión mediante
+      </div>
+      <div class="social-buttons">
+        <ion-button (click)="loginFacebook()">
+          <ion-avatar>
+            <img src="/assets/images/f.png">
+          </ion-avatar>
+          <ion-label>Facebook</ion-label>
+        </ion-button>
+        <ion-button (click)="loginGoogle()">
+          <ion-avatar>
+            <img src="/assets/images/g.png">
+          </ion-avatar>
+          <ion-label>Google</ion-label>
+        </ion-button>
+      </div>
+
+      <div class="sign-up">
+        ¿No tienes cuenta? <ion-button color="dark" fill="clear" routerLink="/register" routerDirection="forward">Regístrate</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

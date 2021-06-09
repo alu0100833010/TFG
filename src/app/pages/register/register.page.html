@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Regístrate</h1>
+
+    <form (ngSubmit)="f.form.valid && register()" class="form-container" #f="ngForm">
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="user.userName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="user.userEmail"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="user.userPassword"></ion-input>
+        <ion-icon [name]="passwordToggleIcon" (click)="togglePassword()" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Confirmar contraseña</ion-label>
+        <ion-input [type]="showPassword ? 'text' : 'password'" #cpass="ngModel" pattern="{{user.userPassword}}" name="confirmpassword" [(ngModel)]="confirmPassword"></ion-input>
+        <ion-icon [name]="passwordToggleIcon" (click)="togglePassword()" slot="end"></ion-icon>
+      </ion-item>
+      <span class="text-danger" *ngIf="f.submitted && cpass.errors?.pattern">Las contraseñas no coinciden</span>
+
+      <ion-button type="submit" expand="block" class="main-button">Resgístrate</ion-button>
+
+      <div class="socialnetwork">
+        o regístrate mediante 
+      </div>
+      <div class="social-buttons">
+        <ion-button (click)="loginFacebook()">
+          <ion-avatar>
+            <img src="/assets/images/f.png">
+          </ion-avatar>
+          <ion-label>Facebook</ion-label>
+        </ion-button>
+        <ion-button (click)="loginGoogle()">
+          <ion-avatar>
+            <img src="/assets/images/g.png">
+          </ion-avatar>
+          <ion-label>Google</ion-label>
+        </ion-button>
+      </div>
+
+      <div class="sign-up">
+        ¿Tienes una cuenta? <ion-button color="dark" fill="clear" routerLink="/login" routerDirection="forward">Inicia sesión</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/foro" routerDirection="back">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button icon-only [disabled]="postBtn" (click)="createPost()">
+        <ion-icon color="success" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="header">
+    Crea un nuevo post
+  </div>
+  <ion-item lines="none">
+    <ion-label position="floating">Escribe algo...</ion-label>
+    <ion-textarea rows="10" #textarea [(ngModel)]="post" (keyup)="check()"></ion-textarea>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      Sube una foto
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="file-upload">
+          <ion-icon  color="dark" slot="icon-only" name="images"></ion-icon>
+        </label>        
+        <input (change)="newImage($event)" id="file-upload" style="display: none;" type="file" accept="image/*">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <img [src]="newImg">
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    Foro
+  </div>
+  <ion-card *ngFor="let post of posts"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{post.fecha.seconds*1000 | date: 'medium'}}</ion-card-subtitle>
+      <ion-card-title>{{post.autor}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{post.post}}
+    </ion-card-content>
+    <img *ngIf="post.img != ''" class="img" [src]="post.img" (click)="agrandar($event)">
+    <ion-item lines="full">
+      <ion-button class="heart-icon" (click)="likes(post.id)" icons-only fill="clear">
+        <ion-icon name="heart"></ion-icon>&nbsp;{{post.likes}}
+      </ion-button>
+      <ion-button class="com-icon" (click)="comment(post.id)" icons-only fill="clear">
+        <ion-icon color="dark" name="chatbox-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+  
+  <!--<div *ngFor="let post of posts">
+    <ion-item lines="none">
+      <ion-label>
+        <h3>{{post.autor}}</h3>
+        <ion-note>{{post.fecha.seconds*1000 | date: 'medium'}}</ion-note>
+      </ion-label>
+    </ion-item>
+    <ion-card-content>
+      {{post.post}}
+    </ion-card-content>
+    <div *ngIf="post.img != undefined">
+      <img class="img" [src]="post.img">
+    </div>
+    <ion-item lines="full">
+      <ion-button (click)="likes(post.id)" icons-only fill="clear">
+        <ion-icon name="heart-outline"></ion-icon>{{post.likes}}
+      </ion-button>
+      <ion-button (click)="comment(post.id)" icons-only fill="clear">
+        <ion-icon name="chatbox-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>-->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/post">
+      <ion-icon name="pencil"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

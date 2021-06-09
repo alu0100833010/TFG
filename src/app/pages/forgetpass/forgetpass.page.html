@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/login" routerDirection="back">
+        <ion-icon color="dark" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Restablecer contraseña</h1>
+
+    <div class="info">
+      Introduce tu correo electrónico para restablecer la contraseña
+    </div>
+
+    <div class="form-container">
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="main-button" (click)="sendLinkReset()">Recuperar</ion-button>
+    </div>
+  </div>
+</ion-content>

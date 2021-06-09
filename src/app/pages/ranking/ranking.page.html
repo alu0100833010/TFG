@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <ion-icon  color="dark" name="chevron-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    Ranking
+  </div>
+  
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Nivel</th>
+        <th scope="col">Puntos</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let rank of ranking; index as i" [ngClass]="{'currentUser': rank.userName == this.user.userName}">
+      <tr>
+        <th scope="col">{{i+1}}º</th>
+        <td>{{rank.userName}}</td>
+        <td>{{rank.userLevel}}</td>
+        <th scope="col">{{rank.userTotalPoints}}</th>       
+      </tr>
+    </tbody>
+  </table>
+</ion-content>

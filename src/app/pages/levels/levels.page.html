@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+        <ion-icon  color="dark" name="chevron-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    Niveles
+  </div>
+  
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th scope="col"> Nivel</th>
+        <th scope="col">Puntos</th>
+        <th scope="col">Insignia</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let lvl of levels; index as i" [ngClass]="{'currentUser': lvl.levelValue == this.user.userLevel}">
+      <tr>
+        <th scope="row">{{lvl.levelValue}}</th>
+        <td>{{lvl.levelPoints}}</td>    
+        <td><ion-img [src]="lvl.levelImg"></ion-img></td> 
+      </tr>
+    </tbody>
+  </table>
+</ion-content>
